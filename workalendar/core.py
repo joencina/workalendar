@@ -8,9 +8,9 @@ from datetime import date, timedelta, datetime
 from pathlib import Path
 import sys
 
-import convertdate
+from .convertdate import islamic
 from dateutil import easter
-from lunardate import LunarDate
+from .lunardate import LunarDate
 
 from .exceptions import (
     UnsupportedDateType, CalendarError,
@@ -456,7 +456,7 @@ class IslamicMixin(CalverterMixin):
 
     WEEKEND_DAYS = (FRI, SAT)
 
-    conversion_method = convertdate.islamic
+    conversion_method = islamic
     include_prophet_birthday = False
     include_day_after_prophet_birthday = False
     include_start_ramadan = False
